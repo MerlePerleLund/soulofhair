@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function TeamPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const team = [
     {
       name: "Jannie",
@@ -70,9 +76,6 @@ export default function TeamPage() {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/#hjem" className="text-grey hover:text-primary transition-colors font-medium">
-                Hjem
-              </Link>
               <Link href="/#services" className="text-grey hover:text-primary transition-colors font-medium">
                 Services
               </Link>
@@ -93,21 +96,66 @@ export default function TeamPage() {
                 Book tid
               </Link>
               {/* Mobile menu button */}
-              <button className="md:hidden text-grey">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+              <button
+                className="md:hidden text-grey"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-primary-tint shadow-lg">
+              <div className="flex flex-col space-y-4 px-6 py-6">
+                <Link
+                  href="/#services"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link
+                  href="/#teamet"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Teamet
+                </Link>
+                <Link
+                  href="/#om"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Om os
+                </Link>
+                <Link
+                  href="/#kontakt"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Kontakt
+                </Link>
+                <Link
+                  href="/#kontakt"
+                  className="bg-primary hover:bg-primary-shade text-white font-semibold px-6 py-3 rounded-full text-center transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book tid
+                </Link>
+              </div>
+            </div>
+          )}
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-white to-primary-tint">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-bold text-grey-dark mb-6">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-b from-white to-primary-tint">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-grey-dark mb-4 sm:mb-6">
               Mød Vores Team
             </h1>
             <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -119,8 +167,8 @@ export default function TeamPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {team.map((member, index) => (
               <div
@@ -148,9 +196,9 @@ export default function TeamPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-tint">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-grey-dark mb-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary-tint">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-grey-dark mb-4 sm:mb-6">
             Book tid hos et af vores dygtige team medlemmer
           </h2>
           <p className="text-xl text-grey mb-8">

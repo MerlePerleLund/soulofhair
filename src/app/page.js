@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
-import { ArrowRight, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Star, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
@@ -25,12 +30,6 @@ export default function Home() {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#hjem"
-                className="text-grey hover:text-primary transition-colors font-medium"
-              >
-                Hjem
-              </a>
               <a
                 href="#services"
                 className="text-grey hover:text-primary transition-colors font-medium"
@@ -66,23 +65,58 @@ export default function Home() {
                 Book tid
               </a>
               {/* Mobile menu button */}
-              <button className="md:hidden text-grey">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+              <button
+                className="md:hidden text-grey"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-primary-tint shadow-lg">
+              <div className="flex flex-col space-y-4 px-6 py-6">
+                <a
+                  href="#services"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Services
+                </a>
+                <a
+                  href="#teamet"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Teamet
+                </a>
+                <a
+                  href="#om"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Om os
+                </a>
+                <a
+                  href="#kontakt"
+                  className="text-grey hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Kontakt
+                </a>
+                <a
+                  href="#kontakt"
+                  className="bg-primary hover:bg-primary-shade text-white font-semibold px-6 py-3 rounded-full text-center transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book tid
+                </a>
+              </div>
+            </div>
+          )}
         </nav>
       </header>
 
@@ -107,24 +141,24 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
-          <h1 className="text-6xl md:text-6xl lg:text-6xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl">
             FRISØR I WATERFRONT, HELLERUP
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-4 max-w-2xl mx-auto drop-shadow-lg">
-            Når du har været i stolen hos os, stråler ikke bare dit hår, <br />
+          <p className="text-lg sm:text-xl md:text-2xl text-white mb-6 md:mb-4 max-w-2xl mx-auto drop-shadow-lg px-4">
+            Når du har været i stolen hos os, stråler ikke bare dit hår, <br className="hidden sm:block" />
             men hele dig!
           </p>
-          <button className="bg-primary hover:bg-primary-shade text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          <button className="bg-primary hover:bg-primary-shade text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
             Book din tid
           </button>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-grey-dark mb-4">
+      <section id="services" className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-grey-dark mb-4">
               Vores Services
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto"></div>
@@ -284,10 +318,10 @@ export default function Home() {
       </section>
 
       {/* TEAM Section */}
-      <section id="teamet" className="py-24 bg-primary-tint">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-grey-dark mb-4">
+      <section id="teamet" className="py-12 sm:py-16 md:py-24 bg-primary-tint">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-grey-dark mb-4">
               Mød Teamet
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto"></div>
@@ -328,19 +362,19 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="om" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="om" className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-6 md:mb-8">
               <Image
                 src="/logo/_SOH_green.png"
                 alt="Soul of Hair Logo"
                 width={200}
                 height={100}
-                className="h-20 w-auto"
+                className="h-16 sm:h-20 w-auto"
               />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-grey-dark mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-grey-dark mb-6">
               Historie & håndværk i fokus
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
@@ -418,10 +452,10 @@ export default function Home() {
       </section>
 
       {/* Contact/Booking Section */}
-      <section id="kontakt" className="py-24 bg-primary-tint">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-grey-dark mb-4">
+      <section id="kontakt" className="py-12 sm:py-16 md:py-24 bg-primary-tint">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-grey-dark mb-4">
               Kontakt Os
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto"></div>
