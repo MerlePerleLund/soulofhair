@@ -13,15 +13,29 @@ export default function BehandlingerPage() {
       category: "Klipning",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+        </svg>
+      ),
+      items: [
+        { name: "Dame klip", price: "960 kr" },
+        { name: "Herre klip", price: "720 kr" },
+        { name: "Maskin klip", price: "320 kr" },
+        { name: "Ungdoms klip Pige (under 13-20 år)", price: "800 kr" },
+        { name: "Ungdoms klip Dreng (under 13-20 år)", price: "640 kr" },
+
+      ]
+    },
+    {
+      category: "Børneklip",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
       items: [
-        { name: "Dame klip", price: "Fra 450 kr" },
-        { name: "Herre klip", price: "Fra 350 kr" },
-        { name: "Børn klip (under 12 år)", price: "Fra 250 kr" },
-        { name: "Pandeklip", price: "Fra 150 kr" },
-        { name: "Klip og føn", price: "Fra 550 kr" },
+        { name: "Børneklip 0-3 år", price: "400 kr" },
+        { name: "Børneklip 4-6 år", price: "480 kr" },
+        { name: "Børneklip 7-12 år", price: "560 kr" },
       ]
     },
     {
@@ -32,13 +46,14 @@ export default function BehandlingerPage() {
         </svg>
       ),
       items: [
-        { name: "Hel farve", price: "Fra 650 kr" },
-        { name: "Bundfarve", price: "Fra 550 kr" },
-        { name: "Highlights (folier)", price: "Fra 750 kr" },
-        { name: "Balayage", price: "Fra 950 kr" },
-        { name: "Toning", price: "Fra 350 kr" },
-        { name: "Glossing behandling", price: "Fra 450 kr" },
-      ]
+        { name: "Hel farve", price: "Fra 1.600 - 1.690 kr" },
+        { name: "Bundfarve", price: "900 kr" },
+        { name: "Striber (folier)", price: "Fra 1.190-2.300kr" },
+        { name: "Balayage", price: "Fra 1.610 - 2.670 kr" },
+        { name: "Toning", price: "Fra 1.110 - 1.530 kr" },
+        { name: "Glossing behandling", price: "420 kr" },
+      ],
+      note: "Bemærk: Priserne kan variere alt efter hårets længde og tykkelse. Vi inddeler hårlængder i kort, medium, langt og ekstra langt hår."
     },
     {
       category: "Styling",
@@ -48,27 +63,45 @@ export default function BehandlingerPage() {
         </svg>
       ),
       items: [
-        { name: "Føn", price: "Fra 300 kr" },
-        { name: "Krøller med krøllejern", price: "Fra 350 kr" },
-        { name: "Opsætning", price: "Fra 500 kr" },
-        { name: "Brude styling", price: "Fra 800 kr" },
-        { name: "Fest styling", price: "Fra 600 kr" },
+        { name: "Føn ifm. med behandling", price: "Fra 240 kr" },
+        { name: "Vask og føn", price: "Fra 650-810 kr" },
+        { name: "Opsætning", price: "Fra 970 kr" },
+        { name: "Brude styling", price: "Kontakt os" },
+        
       ]
     },
     {
-      category: "Behandlinger",
+      category: "Bryn og vipper",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
       ),
       items: [
-        { name: "Olaplex behandling", price: "Fra 200 kr" },
-        { name: "Keratin behandling", price: "Fra 800 kr" },
-        { name: "Dyb balsam kur", price: "Fra 150 kr" },
-        { name: "Hovedbundsmassage", price: "Fra 100 kr" },
-        { name: "Proteinkur", price: "Fra 250 kr" },
+        { name: "Farve af bryn ink. ret", price: "250 kr" },
+        { name: "Farve af vipper", price: "250 kr" },
+        { name: "Farve af bryn og vipper", price: "400 kr" },
+        { name: "Rettelse af bryn", price: "Fra 165 kr" },
+        
       ]
+    },
+    {
+      category: "Elev behandlinger",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+        </svg>
+      ),
+      items: [
+        { name: "Bryn og vipper", price: "400 kr" },
+        { name: "Striber", price: "Kontakt os" },
+        { name: "Klip", price: "Kontakt os" },
+        { name: "Kur og føn", price: "300 kr" },
+      ],
+      note: "Bemærk: Karla er på sit første år og er stadig igang med at lære. Klip og Striber kan ikke bookes online endnu, derfor bedes du kontakte os på telefon."
     },
     {
       category: "Special",
@@ -78,11 +111,11 @@ export default function BehandlingerPage() {
         </svg>
       ),
       items: [
-        { name: "Extensions konsultation", price: "Gratis" },
-        { name: "Permanent", price: "Fra 950 kr" },
-        { name: "Afblegning", price: "Fra 700 kr" },
-        { name: "Hårforlængelse", price: "Kontakt os" },
-        { name: "Skægpleje (herre)", price: "Fra 200 kr" },
+        { name: "Kur", price: "260 kr" },
+        { name: "Permanent", price: "Fra 1.300-2.020 kr" },
+        { name: "Skægklip (herre)", price: "Fra 240 kr" },
+        { name: "Tilrettelse af kanter", price: "240 kr" },
+        { name: "Pandehårs klip", price: "160 kr" },
       ]
     },
   ];
@@ -222,6 +255,11 @@ export default function BehandlingerPage() {
                       <span className="text-primary font-semibold whitespace-nowrap ml-4">{item.price}</span>
                     </div>
                   ))}
+                  {treatment.note && (
+                    <div className="mt-6 pt-0">
+                      <p className="text-sm text-grey italic">{treatment.note}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -248,7 +286,7 @@ export default function BehandlingerPage() {
             <div className="bg-white rounded-xl p-6">
               <h3 className="text-xl font-semibold text-grey-dark mb-3">⏱️ Tidsforbrug</h3>
               <p className="text-grey">
-                Tidsforbruget varierer efter behandling. Vi informerer dig altid om forventet tid ved booking.
+                Tidsforbruget varierer efter behandling. 
               </p>
             </div>
 

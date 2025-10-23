@@ -16,8 +16,8 @@ export default function TeamPage() {
       description: "Teknisk ekspert i klipning og farvning",
     },
     {
-      name: "Tilda",
-      role: "Senior Frisør",
+      name: "Tilde",
+      role: "Frisør",
       image: "/gallery/SoH_31.jpg",
       description: "Specialist i striber og klipninger",
     },
