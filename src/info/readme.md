@@ -14,7 +14,7 @@ skriv "Claude" i terminal.
 INFO: Der er tre måder at bruge Claude på (tab + shift for at ændre metode):
 - ingenting: Du skal acceptere hver en ændring
 - auto accept edits: Den ændrer automatisk (du skal ikke acceptere, dvs. hurtigere, men mere risky)
-- plan mode: Lav en plan for det jeg vil, men jeg skal acceptere planen først, og så gør den resten automatisk
+- plan mode: Lav en plan for det jeg vil, men jeg skal acceptere planen først, og så gør den resten automatisk.
 
 NICE TO KNOW:
 1. ctrl + p: så kan du søge efter filnavn
