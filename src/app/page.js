@@ -322,7 +322,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-grey-dark mb-4">
-              Mød Teamet
+              Teamet
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto"></div>
           </div>
